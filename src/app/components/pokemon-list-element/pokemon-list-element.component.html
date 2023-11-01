@@ -1,0 +1,16 @@
+<a
+  class="pokemon-list-wrapper"
+  [routerLink]="['/pokemon', pokemon?.id]">
+  <div class="pokemon-list-wrapper__sprite">
+    <img
+      [src]="pokemon?.sprites?.front_default"
+      alt="Pokemon sprite" />
+  </div>
+  <div class="pokemon-list-wrapper__data">
+    <p class="pokemon-list-wrapper__number">No. {{ pokemon?.id }}</p>
+    <p class="pokemon-list-wrapper__name">
+      {{ pokemon?.name | titlecase }}
+    </p>
+    <div class="pokemon-list-wrapper__types"></div>
+  </div>
+</a>

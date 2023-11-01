@@ -1,0 +1,17 @@
+@import "../../styles/breakpoints";
+
+.button-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+  gap: 5px;
+
+  @media (min-width: $breakpoint-sm) {
+    bottom: 50px;
+    right: 50px;
+  }
+}

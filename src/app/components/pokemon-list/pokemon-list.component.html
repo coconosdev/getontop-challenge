@@ -1,0 +1,10 @@
+<ng-container *ngIf="pokemonList$ | async as pokemonList; else loading">
+  <div class="pokemon-list-wrapper">
+    <app-pokemon-list-element
+      *ngFor="let pokemon of pokemonList"
+      [pokemon]="pokemon"></app-pokemon-list-element>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>

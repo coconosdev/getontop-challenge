@@ -1,0 +1,14 @@
+<div class="button-wrapper">
+  <button
+    class="pokemon-button"
+    [disabled]="offset <= 0"
+    (click)="previousPage()">
+    Previous
+  </button>
+  <button
+    class="pokemon-button"
+    [disabled]="offset > 1200"
+    (click)="nextPage()">
+    Next
+  </button>
+</div>

@@ -1,0 +1,24 @@
+@import "./styles/breakpoints";
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 15px 0;
+  position: relative;
+
+  @media (min-width: $breakpoint-sm) {
+    max-width: 550px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 750px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: 970px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: 1170px;
+  }
+}

@@ -1,0 +1,68 @@
+<!-- <pre>{{ pokemonAllDetails$ | async | json }}</pre> -->
+<ng-container
+  *ngIf="pokemonAllDetails$ | async as pokemonAllDetails; else loading">
+  <div class="pokemon-detail">
+    <h2>{{ pokemonAllDetails?.name | titlecase }}</h2>
+    <p class="description">
+      <span
+        >This pokémon has a base experience of
+        {{ pokemonAllDetails?.base_experience }}</span
+      >
+      <span>, weights {{ pokemonAllDetails.weight | divideByTen }} kg</span>
+      <span *ngIf="pokemonAllDetails.height"
+        >, and it's height is
+        {{ pokemonAllDetails.height | divideByTen }} meters</span
+      >
+    </p>
+    <div class="pokemon-detail__sprite">
+      <img
+        [src]="pokemonAllDetails?.sprites?.front_default"
+        alt="Pokemon sprite" />
+    </div>
+    <div class="pokemon-detail__wrapper">
+      <div class="pokemon-detail__container">
+        <h3>Types:</h3>
+        <div class="pokemon-detail__types">
+          <div *ngFor="let type of pokemonAllDetails.types">
+            <app-type-pill [type]="type.type.name"></app-type-pill>
+          </div>
+        </div>
+      </div>
+      <div class="pokemon-detail__container">
+        <h3>Abilities:</h3>
+        <div class="pokemon-detail__abilities">
+          <div *ngFor="let ability of pokemonAllDetails.abilities">
+            <div>{{ ability.ability.name | titlecase }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="pokemon-detail__container">
+        <h3>Evolution chain:</h3>
+        <div class="pokemon-detail__evolutions">
+          <div *ngFor="let evolution of pokemonAllDetails.flat_evolution_chain">
+            <div>{{ evolution.species.name | uppercase }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="pokemon-detail__container">
+        <h3>Stats:</h3>
+        <div class="pokemon-detail__stats">
+          <div *ngFor="let stat of pokemonAllDetails.stats">
+            <span>{{ stat.stat.name | titlecase }}: </span>
+            <span>{{ stat.base_stat }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Moves:</h3>
+    <div class="pokemon-detail__moves">
+      <div *ngFor="let move of pokemonAllDetails.moves">
+        <div>{{ move.move.name | titlecase }},</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>

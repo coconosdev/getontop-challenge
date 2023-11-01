@@ -1,0 +1,36 @@
+@import "../../styles/breakpoints";
+@import "../../styles/variables";
+
+.pokemon-list-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 20px;
+  background-color: $white;
+  min-width: 220px;
+  transition: 0.2s all ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $light-gray;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    flex-flow: column wrap;
+    min-width: none;
+  }
+
+  &__number {
+    text-transform: uppercase;
+    color: $dark-gray;
+    font-size: 12px;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 16px;
+    color: $black;
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../styles/breakpoints";
+@import "../../styles/variables";
+
+.pokemon-detail {
+  border-radius: 16px;
+  padding: 20px;
+  background-color: $white;
+
+  &__types {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+
+    @media (min-width: $breakpoint-sm) {
+      flex-flow: row wrap;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      flex-flow: row nowrap;
+    }
+  }
+
+  &__container {
+    flex-basis: 100%;
+
+    @media (min-width: $breakpoint-sm) {
+      flex-basis: 47%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      flex-basis: 22%;
+    }
+  }
+
+  &__moves {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+  }
+}

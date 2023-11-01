@@ -1,0 +1,13 @@
+@import "../../styles/breakpoints";
+
+.pokemon-list-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  @media (min-width: $breakpoint-sm) {
+    flex-flow: row wrap;
+  }
+}

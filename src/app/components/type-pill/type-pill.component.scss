@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.type-pill-wrapper {
+  --type-normal: #a9a878;
+  --type-bug: #a8b821;
+  --type-fight: #c12e27;
+  --type-ghost: #705699;
+  --type-electric: #f8d026;
+  --type-flying: #a991ed;
+  --type-steel: #b8b8d0;
+  --type-psychic: #fb5488;
+  --type-poison: #a03da3;
+  --type-fire: #ef7e2e;
+  --type-ice: #98d8d8;
+  --type-ground: #debf6c;
+  --type-water: #6594f1;
+  --type-dragon: #6f36f9;
+  --type-rock: #b79e38;
+  --type-grass: #79c457;
+  --type-dark: #6e5848;
+  --type-fairy: #e099e1;
+
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: $white;
+  text-transform: uppercase;
+}
