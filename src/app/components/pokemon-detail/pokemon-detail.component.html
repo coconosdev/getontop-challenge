@@ -40,7 +40,7 @@
         <h3>Evolution chain:</h3>
         <div class="pokemon-detail__evolutions">
           <div *ngFor="let evolution of pokemonAllDetails.flat_evolution_chain">
-            <div>{{ evolution.species.name | uppercase }}</div>
+            <div>{{ evolution.species.name | titlecase }}</div>
           </div>
         </div>
       </div>
